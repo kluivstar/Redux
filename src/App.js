@@ -1,10 +1,16 @@
-import React from 'react'
 import { CakeContainer } from './components/CakeContainer'
+import store from './redux/store'
+import {Provider} from 'react-redux'
+
 
 export const App = () => {
   return (
     <div>
-      <CakeContainer/>
+      <Provider store={store}>
+        <CakeContainer/>
+      </Provider>
     </div>
   )
 }
+
+export default App
