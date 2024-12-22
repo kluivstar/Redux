@@ -39,7 +39,7 @@ const fetchUserFailure = error => {
         payload: error
     }
 }
-
+// async action
 const fetchUsers = () => {
     return function (dispatch) {
         dispatch(fetchUsersRequest())
@@ -55,6 +55,7 @@ const fetchUsers = () => {
         })
     }
 }
+
 const reducer = (state = initialState, action) => {
     // if action type is ____ return ____
     switch (action.type) {

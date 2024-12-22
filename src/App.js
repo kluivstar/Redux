@@ -1,7 +1,10 @@
 import React from 'react'
+import { CakeContainer } from './components/CakeContainer'
 
 export const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <CakeContainer/>
+    </div>
   )
 }
