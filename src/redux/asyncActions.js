@@ -1,5 +1,8 @@
 const redux = require('redux')
 const createStore = redux.createStore
+const thunkMiddleware = require('redux-thunk')
+const axios = require('axios')
+const applyMiddleware = redux.applyMiddleware
 
 // State
 const initialState = {
@@ -37,6 +40,21 @@ const fetchUserFailure = error => {
     }
 }
 
+const fetchUsers = () => {
+    return function (dispatch) {
+        dispatch(fetchUsersRequest())
+        axios
+        .get('https://jsonplaceholder.typicode.com/users')
+        .then(response => {
+            console.log('Response')
+            const users = response.data.map(user => user.id)
+            dispatch(fetchUserSuccess(users))
+        })
+        .catch(error => {
+            dispatch(fetchUserFailure(error.message))
+        })
+    }
+}
 const reducer = (state = initialState, action) => {
     // if action type is ____ return ____
     switch (action.type) {
@@ -63,4 +81,11 @@ const reducer = (state = initialState, action) => {
     
 }
 
-const store = createStore(reducer)
+// Create Store while applying the middleware
+const store = createStore(reducer, applyMiddleware(thunkMiddleware))
+console.log('Initial state', store.getState())
+
+store.subscribe(() => {
+    console.log(store.getState())
+})
+store.dispatch(fetchUsers())
