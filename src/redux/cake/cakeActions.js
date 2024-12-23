@@ -1,7 +1,7 @@
 import React from 'react'
 import { BUY_CAKE } from './cakeTypes'
 
-function buyCake(){
+export function buyCake(){
     return {
         type: BUY_CAKE,
     }

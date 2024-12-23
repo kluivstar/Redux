@@ -1,4 +1,4 @@
-import { CakeContainer } from './components/CakeContainer'
+import  CakeContainer from './components/CakeContainer'
 import store from './redux/store'
 import {Provider} from 'react-redux'
 
