@@ -14,7 +14,8 @@ export const CakeContainer = (props) => {
 const mapStateToProps = state => {
   console.log(state)
   return {
-    numOfCakes: state.numOfCakes
+    // added "cake" to be specific
+    numOfCakes: state.cake.numOfCakes
   }
 }
 
