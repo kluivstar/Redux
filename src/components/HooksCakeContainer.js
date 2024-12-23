@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { buyCake } from "../redux";
 
 const HooksCakeContainer = () => {
+  // added "cake" key to be specific
     const numOfCakes = useSelector(state => state.cake.numOfCakes)
 
     const dispatch = useDispatch()
