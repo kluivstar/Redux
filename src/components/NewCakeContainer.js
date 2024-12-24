@@ -6,6 +6,9 @@ export const NewCakeContainer = (props) => {
     const [number, setNumber] = useState(1)
     
   return (
+    // Displays the current number of cakes (props.numOfCakes).
+    // Input field lets the user specify how many cakes to buy. The onChange event updates the number state.
+    // The onClick event triggers the buyCake function with the specified number
     <div>
         <h2 className="">Number of cakes ={props.numOfCakes}</h2>
         <input type="text"  value={number} onChange={(e) => setNumber(e.target.value)} class=""/>
@@ -21,7 +24,9 @@ const mapStateToProps = state => {
     numOfCakes: state.cake.numOfCakes
   }
 }
-
+// PASS INPUT TO ACTION CREATOR THEN REDUCER THE UPDATES STATE WITH NEW INPUT
+// Binds the buyCake action creator to the component
+// When buyCake is called with a number, it dispatches the action to the Redux store
 const mapDispatchToProps = dispatch => {
   return {
     buyCake: (number) => dispatch(buyCake(number))
