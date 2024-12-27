@@ -4,6 +4,7 @@ import {Provider} from 'react-redux'
 import HookCakeContainer from './components/HooksCakeContainer'
 import IceCreamContainer from './components/IceCreamContainer'
 import NewCakeContainer from './components/NewCakeContainer'
+import ItemContainer from './components/ItemContainer'
 
 export const App = () => {
   return (
@@ -16,6 +17,9 @@ export const App = () => {
           <NewCakeContainer/>
           */}
           <IceCreamContainer/> 
+          <ItemContainer/>
+          <ItemContainer cake/>
+          
         </div>
       </Provider>
     </div>

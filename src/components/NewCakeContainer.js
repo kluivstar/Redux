@@ -24,7 +24,7 @@ const mapStateToProps = state => {
     numOfCakes: state.cake.numOfCakes
   }
 }
-// PASS INPUT TO ACTION CREATOR THEN REDUCER THE UPDATES STATE WITH NEW INPUT
+// PASS INPUT TO ACTION CREATOR THEN REDUCER THEN UPDATES STATE WITH NEW INPUT
 // Binds the buyCake action creator to the component
 // When buyCake is called with a number, it dispatches the action to the Redux store
 const mapDispatchToProps = dispatch => {
