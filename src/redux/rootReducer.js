@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 import { cakeReducer } from './cake/cakeReducer'
 import {iceCreamReducer} from './iceCream/iceCreamReducer'
-import { useReducer } from 'react'
+import useReducer from './user/userReducer'
 
 
 export const rootReducer = combineReducers({

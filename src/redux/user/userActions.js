@@ -1,19 +1,22 @@
-export const userSuccess = (users) => {
+import {FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, FETCH_USERS_FAILURE} from './userTypes'
+import axios from 'axios'
+
+export const fetchUsersRequest = () => {
     return {
-        type: 'USER_SUCESS',
+        type: 'FETCH_USERS_REQUEST'
+    }
+}
+
+export const fetchUsersFailure = (error) => {
+    return {
+        type: 'FETCH_USERS_FAILURE',
+        payload: error
+    }
+}
+export const fetchUsersSuccess = (users) => {
+    return {
+        type: 'FETCH_USERS_SUCCESS',
         payload: users
     }
 }
 
-export const userRequest = () => {
-    return {
-        type: 'USER_REQUEST'
-    }
-}
-
-export const userFailure = (error) => {
-    return {
-        type: 'USER_FAILURE',
-        payload: error
-    }
-}
